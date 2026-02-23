@@ -1,5 +1,8 @@
 # Hackathon_Dev_Team
-Automatic Lens Correction — A100-Optimized CNN
+#Automatic Lens Correction — A100-Optimized CNN
+
+Colab: https://colab.research.google.com/drive/1RO26D6DhnsbDcr367jXr0BHYNNSkFC0E?usp=sharing
+
 A high-performance deep learning pipeline for automatic lens distortion correction using EfficientNetB0 and differentiable Brown-Conrady undistortion, optimized for NVIDIA A100 GPUs.
 
 🎯 Overview
@@ -13,6 +16,7 @@ Differentiable Geometry: Brown-Conrady distortion model with backprop-safe sampl
 Two-Phase Training: Frozen backbone → progressive fine-tuning
 Memory-Safe Pipeline: ~1.3 GB peak RAM via tf.data + local SSD streaming
 Parallel I/O: gsutil bulk download + native TF decode (15–20× faster than GCS Python clients)
+
 📊 Architecture
 Distorted Image (384×384) ↓ [CNN Encoder] • EfficientNetB0 (pretrained) • Global Average Pooling → (1280,) ↓ [Regression Head] • Dense(512) + Dropout(0.3) • Dense(128) + Dropout(0.2) • Dense(4, tanh) + Scale ↓ [k₁, k₂, p₁, p₂] coefficients ↓ [Differentiable Brown-Conrady Undistortion] ↓ Undistorted Image (384×384) ↓ Loss = 0.8 × (1 - SSIM) + 0.2 × L1
 
