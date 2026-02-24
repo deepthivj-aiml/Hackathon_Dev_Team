@@ -38,6 +38,17 @@ These are real property photographs from the test dataset. Each image exhibits t
 
 ---
 
+## 📦 Dataset
+
+The training and test data is hosted on Google Cloud Storage and is
+downloaded automatically when you run the notebook.
+
+- **Training set:** ~23,000 distorted/corrected image pairs
+- **Test set:** 1,000 distorted property photographs  
+- **Source:** AutoHDR automatic-lens-correction competition dataset
+
+---
+
 ## 🎯 Overview
 
 Lens distortion is a systematic optical imperfection where straight lines in the real world appear curved in photographs — very common in real estate photography where wide-angle lenses are used to make rooms look larger.
