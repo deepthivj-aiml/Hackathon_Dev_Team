@@ -322,7 +322,3 @@ UNDISTORT_SIZE = 256
 *Developed with [Claude AI](https://claude.ai) (Anthropic) for architecture design, debugging, and iterative optimisation.*
 
 ---
-
-## 📄 License
-
-[Add your license here]
